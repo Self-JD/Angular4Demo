@@ -9,12 +9,12 @@ export class LoginServiceService {
 
   constructor(private http: Http) { }
 
-   // login(username: string, password: string) {
-   	login() {
+    login(username: string, password: string) {
+   	//login() {
 
    		console.log("Web service call");
 
-   	return this.http.post('http://fsapi.sarvaya.com/api/auth/login',  { "username": "asharma", "password": "abcd" })
+   	return this.http.post('http://fsapi.sarvaya.com/api/auth/login',  { "username": username, "password": password })
         .map((response: Response) => {
             // login successful if there's a id_token in the response
             console.log("Success!!", response.json());

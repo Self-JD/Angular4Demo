@@ -32,9 +32,19 @@ export class LoginfoComponent implements OnInit {
 
 		if(valid){
 			 //this.loginService.login(user.username, user.password)
-			 this.loginService.login().subscribe( user => {
+			 this.loginService.login( this.username, this.password).subscribe( user => {
                 	console.log("Response value=",user);
-                    this.router.navigate([this.returnUrl]);
+                	if(user.status){
+                		this.router.navigate([this.returnUrl]);
+                	}
+                	else{
+                		this.alertService.error(user.message);
+                		this.username='';
+                		this.password='';
+                	}
+
+
+                    
                 },
                 error => {
                     this.alertService.error(error);

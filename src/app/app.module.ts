@@ -17,6 +17,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginServiceService } from './services/login/login-service.service';
 import { AlertService } from './services/alert/alert.service';
 
+//Directive
+import { AlertComponent } from './components/_directives/index';
+
 const appRoutes: Routes = [
   {path:"", component:HomeComponent},
   {path:"dashboard", component:DashboardComponent},
@@ -25,11 +28,13 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    AlertComponent,
+    HomeComponent,
     HeaderComponent,
     LoginfoComponent,
     FooterComponent,
     DashboardComponent,
-    HomeComponent
+    
   ],
   imports: [
     BrowserModule,
