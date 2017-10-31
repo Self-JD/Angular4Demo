@@ -1,0 +1,12 @@
+a {
+    cursor: pointer;
+}
+
+.help-block {
+    font-size: 12px;
+}
+#fullpage{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
